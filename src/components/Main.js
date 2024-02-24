@@ -183,13 +183,13 @@ const photos = [
   { src: gallery84, width: 4538, height: 3546 },
 ]
 
-const Main = ({
+export default function Main({
   onCloseArticle,
   setWrapperRef,
   article,
   articleTimeout,
   timeout,
-}) => {
+}) {
   const [index, setIndex] = useState(-1)
 
   const close = (
@@ -374,7 +374,5 @@ Main.propTypes = {
   articleTimeout: PropTypes.bool,
   onCloseArticle: PropTypes.func,
   timeout: PropTypes.bool,
-  setWrapperRef: PropTypes.func.isRequired, // useRefを使用する場合、このPropTypesは不要になる場合があります
+  setWrapperRef: PropTypes.func.isRequired,
 }
-
-export default Main

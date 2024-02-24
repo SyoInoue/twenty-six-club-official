@@ -4,7 +4,7 @@ import Main from '../components/Main'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 
-class IndexPage extends React.Component {
+export default class IndexPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -120,5 +120,3 @@ class IndexPage extends React.Component {
     )
   }
 }
-
-export default IndexPage
