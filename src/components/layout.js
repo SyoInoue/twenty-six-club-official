@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import '../assets/scss/main.scss'
 
-export default Layout = ({ children, location }) => {
+export default function Layout({ children, location }) {
   let content
 
   if (location && location.pathname === '/') {
