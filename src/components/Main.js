@@ -330,13 +330,12 @@ export default function Main({
       >
         <h2 className="major">video</h2>
         <span className="image main">
-          <div class="responsive-iframe">
+          <div className="responsive-iframe">
             <iframe
               src="https://www.youtube.com/embed/mVV6SYYybj0?si=SwlhSy75YUrMGNE9"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </span>
