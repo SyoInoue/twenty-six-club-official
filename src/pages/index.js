@@ -1,122 +1,98 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 import Layout from '../components/layout'
 
-export default class IndexPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isArticleVisible: false,
-      timeout: false,
-      articleTimeout: false,
-      article: '',
-      loading: 'is-loading',
-    }
-    this.handleOpenArticle = this.handleOpenArticle.bind(this)
-    this.handleCloseArticle = this.handleCloseArticle.bind(this)
-    this.setWrapperRef = this.setWrapperRef.bind(this)
-    this.handleClickOutside = this.handleClickOutside.bind(this)
-  }
+export default function IndexPage(props) {
+  /** 各コンテンツの表示状態 */
+  const [isArticleVisible, setIsArticleVisible] = useState(false)
+  /** 各コンテンツが消える時の遅延 */
+  const [timeoutState, setTimeoutState] = useState(false)
+  /** 記事のタイムアウト状態 */
+  const [articleTimeout, setArticleTimeout] = useState(false)
+  /** 各コンテンツ名を格納するstate */
+  const [article, setArticle] = useState('')
+  /** ローディング状態格納 */
+  const [loading, setLoading] = useState('is-loading')
+  /** refでコンテンツを監視 */
+  const wrapperRef = useRef(null)
 
-  componentDidMount() {
-    this.timeoutId = setTimeout(() => {
-      this.setState({ loading: '' })
-    }, 100)
-    document.addEventListener('mousedown', this.handleClickOutside)
-  }
-
-  componentWillUnmount() {
-    if (this.timeoutId) {
-      clearTimeout(this.timeoutId)
-    }
-    document.removeEventListener('mousedown', this.handleClickOutside)
-  }
-
-  setWrapperRef(node) {
-    this.wrapperRef = node
-  }
-
-  handleOpenArticle(article) {
-    this.setState({
-      isArticleVisible: !this.state.isArticleVisible,
-      article,
-    })
+  const handleOpenArticle = article => {
+    setIsArticleVisible(!isArticleVisible)
 
     setTimeout(() => {
-      this.setState({
-        timeout: !this.state.timeout,
-      })
+      setTimeoutState(!timeoutState)
     }, 325)
 
     setTimeout(() => {
-      this.setState({
-        articleTimeout: !this.state.articleTimeout,
-      })
+      setArticleTimeout(!articleTimeout)
     }, 350)
+
+    setArticle(article)
   }
 
-  handleCloseArticle() {
-    this.setState({
-      articleTimeout: !this.state.articleTimeout,
-    })
+  const handleCloseArticle = () => {
+    setArticleTimeout(!articleTimeout)
 
     setTimeout(() => {
-      this.setState({
-        timeout: !this.state.timeout,
-      })
+      setTimeoutState(!timeoutState)
     }, 325)
 
     setTimeout(() => {
-      this.setState({
-        isArticleVisible: !this.state.isArticleVisible,
-        article: '',
-      })
+      setIsArticleVisible(!isArticleVisible)
+      setArticle('')
     }, 350)
   }
 
-  handleClickOutside(event) {
-    // ライトニングボックスが出てる場合は外側クリックで閉じる処理を行わない
+  const handleClickOutside = event => {
     const isYarlRootPresent = document.querySelector('.yarl__root')
 
     if (
-      this.wrapperRef &&
-      !this.wrapperRef.contains(event.target) &&
+      wrapperRef.current &&
+      !wrapperRef.current.contains(event.target) &&
       !isYarlRootPresent
     ) {
-      if (this.state.isArticleVisible) {
-        this.handleCloseArticle()
+      if (isArticleVisible) {
+        handleCloseArticle()
       }
     }
   }
 
-  render() {
-    return (
-      <Layout location={this.props.location}>
-        <div
-          className={`body ${this.state.loading} ${
-            this.state.isArticleVisible ? 'is-article-visible' : ''
-          }`}
-        >
-          <div id="wrapper">
-            <Header
-              onOpenArticle={this.handleOpenArticle}
-              timeout={this.state.timeout}
-            />
-            <Main
-              isArticleVisible={this.state.isArticleVisible}
-              timeout={this.state.timeout}
-              articleTimeout={this.state.articleTimeout}
-              article={this.state.article}
-              onCloseArticle={this.handleCloseArticle}
-              setWrapperRef={this.setWrapperRef}
-            />
-            <Footer timeout={this.state.timeout} />
-          </div>
-          <div id="bg"></div>
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setLoading('')
+    }, 100)
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      clearTimeout(timeoutId)
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return (
+    <Layout location={props.location}>
+      <div
+        className={`body ${loading} ${
+          isArticleVisible ? 'is-article-visible' : ''
+        }`}
+      >
+        <div id="wrapper" ref={wrapperRef}>
+          <Header onOpenArticle={handleOpenArticle} timeout={timeoutState} />
+          <Main
+            isArticleVisible={isArticleVisible}
+            timeout={timeoutState}
+            articleTimeout={articleTimeout}
+            article={article}
+            onCloseArticle={handleCloseArticle}
+            setWrapperRef={node => (wrapperRef.current = node)}
+          />
+          <Footer timeout={timeoutState} />
         </div>
-      </Layout>
-    )
-  }
+        <div id="bg"></div>
+      </div>
+    </Layout>
+  )
 }
