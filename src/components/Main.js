@@ -218,7 +218,7 @@ export default function Main({
         <span className="image main">
           <img src={tscArtistPhoto} alt="" />
         </span>
-        <h3>Biography</h3>
+        {/* <h3>Biography</h3> */}
         <p>
           「27CLUB」と言う言葉がある。
           <br />
@@ -236,7 +236,7 @@ export default function Main({
           <br />
           呪われたジンクスへのアンチテーゼとして名付け結成された。
         </p>
-        <h3>Philosophy</h3>
+        {/* <h3>Philosophy</h3>
         <p>
           理解される事を前提としない音楽。
           <br />
@@ -253,7 +253,7 @@ export default function Main({
           それでも奏で続けるのは「生き続ける」ため。
           <br />
           この世界に「存在した証」を残すため。
-        </p>
+        </p> */}
         {close}
       </article>
 
