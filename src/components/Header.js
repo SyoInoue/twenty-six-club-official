@@ -1,12 +1,14 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import tscLogoWhite from '../images/tsc-logo-white.png'
 
+/**
+ * ヘッダーコンポーネント
+ */
 export default function Header(props) {
   return (
     <header id="header" style={props.timeout ? { display: 'none' } : {}}>
       <div className="logo">
-        <img className="icon" src={tscLogoWhite}></img>
+        <img className="icon" src={tscLogoWhite} alt="icon"></img>
       </div>
       <div className="content">
         <div className="inner">
@@ -48,7 +50,7 @@ export default function Header(props) {
                 props.onOpenArticle('about')
               }}
             >
-              video
+              VIDEO
             </button>
           </li>
           <li>
@@ -64,9 +66,4 @@ export default function Header(props) {
       </nav>
     </header>
   )
-}
-
-Header.propTypes = {
-  onOpenArticle: PropTypes.func,
-  timeout: PropTypes.bool,
 }

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import tscArtistPhoto from '../images/tsc-artist-photo.png'
 import toyJacket from '../images/toy-jacket.png'
@@ -183,6 +182,9 @@ const photos = [
   { src: gallery84, width: 4538, height: 3546 },
 ]
 
+/**
+ * 各コンテンツの表示を行うコンポーネント
+ */
 export default function Main({
   onCloseArticle,
   setWrapperRef,
@@ -193,12 +195,13 @@ export default function Main({
   const [index, setIndex] = useState(-1)
 
   const close = (
-    <div
+    <button
       className="close"
+      aria-label="Close Article"
       onClick={() => {
         onCloseArticle()
       }}
-    ></div>
+    ></button>
   )
 
   return (
@@ -267,7 +270,7 @@ export default function Main({
         <h2 className="major discography">discography</h2>
         <div className="artworks">
           <div className="card">
-            <img className="artwork" src={toyJacket}></img>
+            <img className="artwork" src={toyJacket} alt="ToyJacket"></img>
             <p className="day">2019/10/25 Release -</p>
             <p className="type">Album</p>
             <p className="label">Toy</p>
@@ -290,7 +293,11 @@ export default function Main({
             </div>
           </div>
           <div className="card">
-            <img className="artwork" src={sixNearlyEqualJacket}></img>
+            <img
+              className="artwork"
+              src={sixNearlyEqualJacket}
+              alt="SixNearlyEqualJacket"
+            ></img>
             <p className="day">2020/04/01 Release -</p>
             <p className="type">Album</p>
             <p className="label">Six Nearly Equal </p>
@@ -309,7 +316,7 @@ export default function Main({
             </div>
           </div>
           <div className="card">
-            <img className="artwork" src={everJacket}></img>
+            <img className="artwork" src={everJacket} alt="EverJacket"></img>
             <p className="day">2020/05/16 Release -</p>
             <p className="type">Single</p>
             <p className="label">EVER</p>
@@ -334,7 +341,7 @@ export default function Main({
             <iframe
               src="https://www.youtube.com/embed/mVV6SYYybj0?si=SwlhSy75YUrMGNE9"
               title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
               allowFullScreen
             ></iframe>
           </div>
@@ -366,12 +373,4 @@ export default function Main({
       </article>
     </div>
   )
-}
-
-Main.propTypes = {
-  article: PropTypes.string,
-  articleTimeout: PropTypes.bool,
-  onCloseArticle: PropTypes.func,
-  timeout: PropTypes.bool,
-  setWrapperRef: PropTypes.func.isRequired,
 }

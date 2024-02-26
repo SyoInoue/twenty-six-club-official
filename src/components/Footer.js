@@ -1,6 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
+/**
+ * フッターコンポーネント
+ */
 export default function Footer(props) {
   return (
     <footer id="footer" style={props.timeout ? { display: 'none' } : {}}>
@@ -10,8 +12,4 @@ export default function Footer(props) {
       </p>
     </footer>
   )
-}
-
-Footer.propTypes = {
-  timeout: PropTypes.bool,
 }

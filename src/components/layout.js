@@ -1,10 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import '../assets/scss/main.scss'
 
+/**
+ * 全てで共通のレイアウトコンポーネント
+ */
 export default function Layout({ children, location }) {
   let content
 
@@ -45,8 +47,4 @@ export default function Layout({ children, location }) {
       )}
     />
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }

@@ -4,6 +4,9 @@ import Main from '../components/Main'
 import Footer from '../components/Footer'
 import Layout from '../components/layout'
 
+/**
+ * メインページ
+ */
 export default function IndexPage(props) {
   /** 各コンテンツの表示状態 */
   const [isArticleVisible, setIsArticleVisible] = useState(false)
@@ -18,6 +21,10 @@ export default function IndexPage(props) {
   /** refでコンテンツを監視 */
   const wrapperRef = useRef(null)
 
+  /**
+   * 各コンテンツを開く時のイベントハンドラ
+   * @param article 各コンテンツ名
+   */
   const handleOpenArticle = article => {
     setIsArticleVisible(!isArticleVisible)
 
@@ -32,6 +39,9 @@ export default function IndexPage(props) {
     setArticle(article)
   }
 
+  /**
+   * 各コンテンツを閉じる時のイベントハンドラ
+   */
   const handleCloseArticle = () => {
     setArticleTimeout(!articleTimeout)
 
@@ -45,7 +55,12 @@ export default function IndexPage(props) {
     }, 350)
   }
 
+  /**
+   * 外側をクリックで各コンテンツを閉じる
+   * @param event クリックイベント
+   */
   const handleClickOutside = event => {
+    // Galleryのスライドショーが存在する場合はクリックイベントを無視する
     const isYarlRootPresent = document.querySelector('.yarl__root')
 
     if (
@@ -59,6 +74,9 @@ export default function IndexPage(props) {
     }
   }
 
+  /**
+   * ページを訪れた際のアニメーション制御
+   */
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoading('')
