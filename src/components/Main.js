@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import CloseButton from './CloseButton'
 import tscArtistPhoto from '../images/tsc-artist-photo.png'
 import toyJacket from '../images/toy-jacket.png'
 import sixNearlyEqualJacket from '../images/six-nearly-equal-jacket.png'
@@ -194,16 +195,6 @@ export default function Main({
 }) {
   const [index, setIndex] = useState(-1)
 
-  const close = (
-    <button
-      className="close"
-      aria-label="Close Article"
-      onClick={() => {
-        onCloseArticle()
-      }}
-    ></button>
-  )
-
   return (
     <div
       ref={setWrapperRef}
@@ -257,7 +248,7 @@ export default function Main({
           <br />
           この世界に「存在した証」を残すため。
         </p> */}
-        {close}
+        <CloseButton onCloseArticle={onCloseArticle} />
       </article>
 
       <article
@@ -325,7 +316,7 @@ export default function Main({
             </div>
           </div>
         </div>
-        {close}
+        <CloseButton onCloseArticle={onCloseArticle} />
       </article>
 
       <article
@@ -346,7 +337,7 @@ export default function Main({
             ></iframe>
           </div>
         </span>
-        {close}
+        <CloseButton onCloseArticle={onCloseArticle} />
       </article>
 
       <article
@@ -369,7 +360,7 @@ export default function Main({
           close={() => setIndex(-1)}
           plugins={[Slideshow, Thumbnails, Zoom]}
         />
-        {close}
+        <CloseButton onCloseArticle={onCloseArticle} />
       </article>
     </div>
   )
