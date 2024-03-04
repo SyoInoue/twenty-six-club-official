@@ -3,7 +3,12 @@ import CloseButton from './CloseButton'
 import tscArtistPhoto from '../images/tsc-artist-photo.png'
 import toyJacket from '../images/toy-jacket.png'
 import sixNearlyEqualJacket from '../images/six-nearly-equal-jacket.png'
+import feelingJacket from '../images/feeling-jacket.jpg'
+import ladyJacket from '../images/lady-jacket.jpg'
+import orgasmJacket from '../images/orgasm-jacket.jpg'
+import candyPopJacket from '../images/candy-pop-jacket.png'
 import everJacket from '../images/ever-jacket.png'
+import zeroJacket from '../images/zero-jacket.png'
 import PhotoAlbum from 'react-photo-album'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
@@ -95,6 +100,7 @@ import gallery81 from '../images/gallery/gallery-81.jpg'
 import gallery82 from '../images/gallery/gallery-82.jpg'
 import gallery83 from '../images/gallery/gallery-83.jpg'
 import gallery84 from '../images/gallery/gallery-84.jpg'
+import Card from './Card'
 
 const photos = [
   { src: gallery01, width: 2048, height: 1365 },
@@ -183,6 +189,91 @@ const photos = [
   { src: gallery84, width: 4538, height: 3546 },
 ]
 
+const cardsData = [
+  {
+    day: '2019/01/25',
+    type: 'Single',
+    label: 'Feeling',
+    description: `1. Feeling
+2. situations -Adult Remix-`,
+    jacket: feelingJacket,
+    alt: 'FeelingJacket',
+  },
+  {
+    day: '2019/03/14',
+    type: 'Single',
+    label: '淑女',
+    description: `1. 淑女
+    2. Stay who you are -Tropical Remix-`,
+    jacket: ladyJacket,
+    alt: '淑女Jacket',
+  },
+  {
+    day: '2019/05/20',
+    type: 'Single',
+    label: 'オーガズム',
+    description: `1. オーガズム
+2. 変わりゆく情景`,
+    jacket: orgasmJacket,
+    alt: 'オーガズムJacket',
+  },
+  {
+    day: '2019/09/01',
+    type: 'Single',
+    label: '零',
+    description: '1. 零',
+    jacket: zeroJacket,
+    alt: '零Jacket',
+  },
+  {
+    day: '2019/11/01',
+    type: 'Single',
+    label: 'キャンディーポップ',
+    description: '1. キャンディーポップ',
+    jacket: candyPopJacket,
+    alt: 'キャンディーポップJacket',
+  },
+  {
+    day: '2020/05/16',
+    type: 'Single',
+    label: 'EVER',
+    description: '1. EVER',
+    jacket: everJacket,
+    alt: 'EverJacket',
+  },
+  {
+    day: '2019/10/25',
+    type: 'Album',
+    label: 'Toy',
+    description: `1. ME
+2. 馴れ初め
+3. 灯
+4. 淑女（Toy mix.）
+5. 野辺送り
+6. 101（Interlude.）
+7. 402号室の住人
+8. オーガズム（Toy mix.）
+9. 見世物
+10. Feeling（Toy mix.）
+11. 泡沫`,
+    jacket: toyJacket,
+    alt: 'ToyJacket',
+  },
+  {
+    day: '2020/04/01',
+    type: 'Album',
+    label: 'Six Nearly Equal',
+    description: `1. XXVI（inst.）
+2. sexual
+3. mystique
+4. respiration（inst.）
+5. if
+6. 00:00`,
+    jacket: sixNearlyEqualJacket,
+    alt: 'SixNearlyEqualJacket',
+  },
+]
+
 /**
  * 各コンテンツの表示を行うコンポーネント
  */
@@ -260,7 +351,10 @@ export default function Main({
       >
         <h2 className="major discography">discography</h2>
         <div className="artworks">
-          <div className="card">
+          {cardsData.map((card, index) => (
+            <Card key={index} {...card} />
+          ))}
+          {/* <div className="card">
             <img className="artwork" src={toyJacket} alt="ToyJacket"></img>
             <p className="day">2019/10/25 Release -</p>
             <p className="type">Album</p>
@@ -282,8 +376,8 @@ export default function Main({
                 <br /> 11. 泡沫
               </p>
             </div>
-          </div>
-          <div className="card">
+          </div> */}
+          {/* <div className="card">
             <img
               className="artwork"
               src={sixNearlyEqualJacket}
@@ -314,7 +408,7 @@ export default function Main({
             <div className="description">
               <p>1. EVER</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <CloseButton onCloseArticle={onCloseArticle} />
       </article>
