@@ -1,9 +1,14 @@
 import React from 'react'
 
+type Props = {
+  /** 各子要素を閉じるための関数 */
+  onCloseArticle: () => void
+}
+
 /**
  * CloseButtonコンポーネント
  */
-export default function CloseButton({ onCloseArticle }) {
+export default function CloseButton({ onCloseArticle }: Props) {
   /**
    * クローズボタンをクリックさrたときの処理
    */

@@ -4,11 +4,18 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import '../assets/scss/main.scss'
 
+type Props = {
+  /** 子要素 */
+  children: React.ReactNode
+  /** ページのURL */
+  location?: Location
+}
+
 /**
  * 全てで共通のレイアウトコンポーネント
  */
-export default function Layout({ children, location }) {
-  let content
+export default function Layout({ children, location }: Props) {
+  let content: React.ReactNode
 
   if (location && location.pathname === '/') {
     content = <div>{children}</div>
@@ -40,7 +47,7 @@ export default function Layout({ children, location }) {
               { name: 'keywords', content: 'sample, something' },
             ]}
           >
-            <html lang="en" />
+            <html lang="ja" />
           </Helmet>
           {content}
         </>

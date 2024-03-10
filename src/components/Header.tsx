@@ -1,12 +1,19 @@
 import React from 'react'
 import tscLogoWhite from '../images/tsc-logo-white.png'
 
+type Props = {
+  /** タイムアウト中かどうかのフラグ */
+  timeout: boolean
+  /** 各子要素を開くための関数 */
+  onOpenArticle: (article: string) => void
+}
+
 /**
  * ヘッダーコンポーネント
  */
-export default function Header(props) {
+export default function Header({ timeout, onOpenArticle }: Props) {
   return (
-    <header id="header" style={props.timeout ? { display: 'none' } : {}}>
+    <header id="header" style={timeout ? { display: 'none' } : {}}>
       <div className="logo">
         <img className="icon" src={tscLogoWhite} alt="icon"></img>
       </div>
@@ -29,7 +36,7 @@ export default function Header(props) {
           <li>
             <button
               onClick={() => {
-                props.onOpenArticle('intro')
+                onOpenArticle('intro')
               }}
             >
               ABOUT US
@@ -38,7 +45,7 @@ export default function Header(props) {
           <li>
             <button
               onClick={() => {
-                props.onOpenArticle('work')
+                onOpenArticle('work')
               }}
             >
               DISCOGRAPHY
@@ -47,7 +54,7 @@ export default function Header(props) {
           <li>
             <button
               onClick={() => {
-                props.onOpenArticle('about')
+                onOpenArticle('about')
               }}
             >
               VIDEO
@@ -56,7 +63,7 @@ export default function Header(props) {
           <li>
             <button
               onClick={() => {
-                props.onOpenArticle('contact')
+                onOpenArticle('contact')
               }}
             >
               GALLERY

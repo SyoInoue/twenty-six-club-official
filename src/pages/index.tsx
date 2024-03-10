@@ -4,10 +4,15 @@ import Main from '../components/Main'
 import Footer from '../components/Footer'
 import Layout from '../components/layout'
 
+type Props = {
+  /** ページのURL */
+  location: Location
+}
+
 /**
  * メインページ
  */
-export default function IndexPage(props) {
+export default function IndexPage({ location }: Props) {
   /** 各コンテンツの表示状態 */
   const [isArticleVisible, setIsArticleVisible] = useState(false)
   /** 各コンテンツが消える時の遅延 */
@@ -19,13 +24,13 @@ export default function IndexPage(props) {
   /** ローディング状態格納 */
   const [loading, setLoading] = useState('is-loading')
   /** refでコンテンツを監視 */
-  const wrapperRef = useRef(null)
+  const wrapperRef = useRef<HTMLDivElement>(null)
 
   /**
    * 各コンテンツを開く時のイベントハンドラ
    * @param article 各コンテンツ名
    */
-  const handleOpenArticle = article => {
+  const handleOpenArticle = (article: string) => {
     setIsArticleVisible(!isArticleVisible)
 
     setTimeout(() => {
@@ -59,13 +64,13 @@ export default function IndexPage(props) {
    * 外側をクリックで各コンテンツを閉じる
    * @param event クリックイベント
    */
-  const handleClickOutside = event => {
+  const handleClickOutside = (event: MouseEvent) => {
     // Galleryのスライドショーが存在する場合はクリックイベントを無視する
     const isYarlRootPresent = document.querySelector('.yarl__root')
 
     if (
       wrapperRef.current &&
-      !wrapperRef.current.contains(event.target) &&
+      !wrapperRef.current.contains(event.target as Node) &&
       !isYarlRootPresent
     ) {
       if (isArticleVisible) {
@@ -87,11 +92,10 @@ export default function IndexPage(props) {
       clearTimeout(timeoutId)
       document.removeEventListener('mousedown', handleClickOutside)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <Layout location={props.location}>
+    <Layout location={location}>
       <div
         className={`body ${loading} ${
           isArticleVisible ? 'is-article-visible' : ''
@@ -100,12 +104,11 @@ export default function IndexPage(props) {
         <div id="wrapper" ref={wrapperRef}>
           <Header onOpenArticle={handleOpenArticle} timeout={timeoutState} />
           <Main
-            isArticleVisible={isArticleVisible}
             timeout={timeoutState}
             articleTimeout={articleTimeout}
             article={article}
             onCloseArticle={handleCloseArticle}
-            setWrapperRef={node => (wrapperRef.current = node)}
+            setWrapperRef={wrapperRef}
           />
           <Footer timeout={timeoutState} />
         </div>

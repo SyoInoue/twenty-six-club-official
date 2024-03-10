@@ -274,6 +274,19 @@ const cardsData = [
   },
 ]
 
+type Props = {
+  /** 各子要素を閉じるための関数 */
+  onCloseArticle: () => void
+  /** メインコンポーネントのrefをセットするための関数 */
+  setWrapperRef: React.ForwardedRef<HTMLDivElement>
+  /** 表示中のコンテンツ */
+  article: string
+  /** 最初のアニメーションのフラグ */
+  articleTimeout: boolean
+  /** 二回目アニメーションのフラグ */
+  timeout: boolean
+}
+
 /**
  * 各コンテンツの表示を行うコンポーネント
  */
@@ -283,7 +296,7 @@ export default function Main({
   article,
   articleTimeout,
   timeout,
-}) {
+}: Props) {
   const [index, setIndex] = useState(-1)
 
   return (
@@ -303,7 +316,6 @@ export default function Main({
         <span className="image main">
           <img src={tscArtistPhoto} alt="" />
         </span>
-        {/* <h3>Biography</h3> */}
         <p>
           「27CLUB」と言う言葉がある。
           <br />
@@ -321,24 +333,6 @@ export default function Main({
           <br />
           呪われたジンクスへのアンチテーゼとして名付け結成された。
         </p>
-        {/* <h3>Philosophy</h3>
-        <p>
-          理解される事を前提としない音楽。
-          <br />
-          理解されるためにリスナーに擦り寄ってるような音楽が巷に蔓延る中で、
-          <br />
-          「TWENTY SIX CLUB」は理解されないことを怖がらない。
-          <br />
-          わかりやすい表現に終始した音楽は自分達の表現領域ではないと定義付ける。
-          <br />
-          内側から溢れ出す「悲しみ」や「叫び」を自分達の色に染めてアウトプットする。
-          <br />
-          それは耳馴染みの悪い代物かもしれない。それは一見歪な形を表しているかもしれない。
-          <br />
-          それでも奏で続けるのは「生き続ける」ため。
-          <br />
-          この世界に「存在した証」を残すため。
-        </p> */}
         <CloseButton onCloseArticle={onCloseArticle} />
       </article>
 
@@ -354,61 +348,6 @@ export default function Main({
           {cardsData.map((card, index) => (
             <Card key={index} {...card} />
           ))}
-          {/* <div className="card">
-            <img className="artwork" src={toyJacket} alt="ToyJacket"></img>
-            <p className="day">2019/10/25 Release -</p>
-            <p className="type">Album</p>
-            <p className="label">Toy</p>
-            <div className="description">
-              <p>
-                1. ME <br />
-                2. 馴れ初め
-                <br /> 3. 灯 <br />
-                4. 淑女（Toy mix.）
-                <br /> 5. 野辺送り
-                <br />
-                6. 101（Interlude.）
-                <br /> 7. 402号室の住人
-                <br /> 8. オーガズム（Toy mix.）
-                <br />
-                9. 見世物 <br />
-                10. Feeling（Toy mix.）
-                <br /> 11. 泡沫
-              </p>
-            </div>
-          </div> */}
-          {/* <div className="card">
-            <img
-              className="artwork"
-              src={sixNearlyEqualJacket}
-              alt="SixNearlyEqualJacket"
-            ></img>
-            <p className="day">2020/04/01 Release -</p>
-            <p className="type">Album</p>
-            <p className="label">Six Nearly Equal </p>
-            <div className="description">
-              <p>
-                1. XXVI（inst.） <br />
-                2. sexual
-                <br />
-                3. mystique <br />
-                4. respiration（inst.）
-                <br />
-                5. if
-                <br />
-                6. 00:00
-              </p>
-            </div>
-          </div>
-          <div className="card">
-            <img className="artwork" src={everJacket} alt="EverJacket"></img>
-            <p className="day">2020/05/16 Release -</p>
-            <p className="type">Single</p>
-            <p className="label">EVER</p>
-            <div className="description">
-              <p>1. EVER</p>
-            </div>
-          </div> */}
         </div>
         <CloseButton onCloseArticle={onCloseArticle} />
       </article>
