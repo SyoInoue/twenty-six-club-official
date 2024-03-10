@@ -64,16 +64,19 @@ export default function IndexPage({ location }: Props) {
    * 外側をクリックで各コンテンツを閉じる
    * @param event クリックイベント
    */
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleClickOutSide = (e: React.MouseEvent) => {
     // Galleryのスライドショーが存在する場合はクリックイベントを無視する
     const isYarlRootPresent = document.querySelector('.yarl__root')
+    console.log('click outside00')
 
     if (
       wrapperRef.current &&
-      !wrapperRef.current.contains(event.target as Node) &&
+      !wrapperRef.current.contains(e.target as Node) &&
       !isYarlRootPresent
     ) {
+      console.log('click outside01')
       if (isArticleVisible) {
+        console.log('click outside02')
         handleCloseArticle()
       }
     }
@@ -86,11 +89,9 @@ export default function IndexPage({ location }: Props) {
     const timeoutId = setTimeout(() => {
       setLoading('')
     }, 100)
-    document.addEventListener('mousedown', handleClickOutside)
 
     return () => {
       clearTimeout(timeoutId)
-      document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
 
@@ -101,7 +102,7 @@ export default function IndexPage({ location }: Props) {
           isArticleVisible ? 'is-article-visible' : ''
         }`}
       >
-        <div id="wrapper" ref={wrapperRef}>
+        <div id="wrapper" onClick={e => handleClickOutSide(e)}>
           <Header onOpenArticle={handleOpenArticle} timeout={timeoutState} />
           <Main
             timeout={timeoutState}
@@ -109,6 +110,7 @@ export default function IndexPage({ location }: Props) {
             article={article}
             onCloseArticle={handleCloseArticle}
             setWrapperRef={wrapperRef}
+            isArticleVisible={isArticleVisible}
           />
           <Footer timeout={timeoutState} />
         </div>

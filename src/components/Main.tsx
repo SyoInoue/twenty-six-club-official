@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import CloseButton from './CloseButton'
 import tscArtistPhoto from '../images/tsc-artist-photo.png'
 import toyJacket from '../images/toy-jacket.png'
@@ -285,6 +285,7 @@ type Props = {
   articleTimeout: boolean
   /** 二回目アニメーションのフラグ */
   timeout: boolean
+  isArticleVisible: boolean
 }
 
 /**
@@ -296,14 +297,31 @@ export default function Main({
   article,
   articleTimeout,
   timeout,
+  isArticleVisible,
 }: Props) {
+  /** GalleryをスライドさせるためのState */
   const [index, setIndex] = useState(-1)
+
+  /** refでコンテンツを監視 */
+  const wrapperRef = useRef<HTMLDivElement>(null)
+
+  const handleClickOutSide = (e: MouseEvent) => {
+    console.log('click outside00')
+
+    if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+      console.log('click outside01')
+      if (isArticleVisible) {
+        console.log('click outside02')
+        onCloseArticle()
+      }
+    }
+  }
 
   return (
     <div
-      ref={setWrapperRef}
       id="main"
       style={timeout ? { display: 'flex' } : { display: 'none' }}
+      ref={setWrapperRef}
     >
       <article
         id="intro"
