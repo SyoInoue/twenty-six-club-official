@@ -10,6 +10,23 @@ type Props = {
 }
 
 /**
+ * メタ情報
+ */
+export function Head() {
+  return (
+    <>
+      <html lang="ja" />
+      <title>TWENTY SIX CLUB OFFICIAL SITE</title>
+      <meta
+        name="description"
+        content="Once creation is tailored to be understood, it ceases to be art."
+      />
+      <meta name="keywords" content="Electro Rock Band" />
+    </>
+  )
+}
+
+/**
  * メインページ
  */
 export default function IndexPage({ location }: Props) {
@@ -67,16 +84,13 @@ export default function IndexPage({ location }: Props) {
   const handleClickOutSide = (e: React.MouseEvent) => {
     // Galleryのスライドショーが存在する場合はクリックイベントを無視する
     const isYarlRootPresent = document.querySelector('.yarl__root')
-    console.log('click outside00')
 
     if (
       wrapperRef.current &&
       !wrapperRef.current.contains(e.target as Node) &&
       !isYarlRootPresent
     ) {
-      console.log('click outside01')
       if (isArticleVisible) {
-        console.log('click outside02')
         handleCloseArticle()
       }
     }

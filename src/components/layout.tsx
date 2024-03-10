@@ -1,6 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 
 import '../assets/scss/main.scss'
 
@@ -13,45 +11,14 @@ type Props = {
 
 /**
  * 全てで共通のレイアウトコンポーネント
+ * pathがルートならスタイルを当てず、それ以外ならスタイルを当てる処理を記述
  */
 export default function Layout({ children, location }: Props) {
-  let content: React.ReactNode
-
-  if (location && location.pathname === '/') {
-    content = <div>{children}</div>
-  } else {
-    content = (
-      <div id="wrapper" className="page">
-        <div>{children}</div>
-      </div>
-    )
-  }
-
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <>
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          >
-            <html lang="ja" />
-          </Helmet>
-          {content}
-        </>
-      )}
-    />
+  return location && location.pathname === '/' ? (
+    <div>{children}</div>
+  ) : (
+    <div id="wrapper" className="page">
+      <div>{children}</div>
+    </div>
   )
 }

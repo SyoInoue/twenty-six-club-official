@@ -5,7 +5,6 @@ module.exports = {
     description: 'TWENTY SIX CLUB OFFICIAL WEBSITE',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
     {
       resolve: `gatsby-plugin-manifest`,
