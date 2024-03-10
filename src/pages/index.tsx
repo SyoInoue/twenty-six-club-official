@@ -110,7 +110,6 @@ export default function IndexPage({ location }: Props) {
             article={article}
             onCloseArticle={handleCloseArticle}
             setWrapperRef={wrapperRef}
-            isArticleVisible={isArticleVisible}
           />
           <Footer timeout={timeoutState} />
         </div>
