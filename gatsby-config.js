@@ -8,11 +8,16 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: `gatsby-plugin-robots-txt`,
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `gatsby-starter-default`,
+        path: `${__dirname}/src/images`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#000000`,

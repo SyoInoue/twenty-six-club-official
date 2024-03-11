@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import CloseButton from './CloseButton'
-import tscArtistPhoto from '../images/tsc-artist-photo.png'
 import toyJacket from '../images/toy-jacket.png'
 import sixNearlyEqualJacket from '../images/six-nearly-equal-jacket.png'
 import feelingJacket from '../images/feeling-jacket.jpg'
@@ -101,6 +100,7 @@ import gallery82 from '../images/gallery/gallery-82.jpg'
 import gallery83 from '../images/gallery/gallery-83.jpg'
 import gallery84 from '../images/gallery/gallery-84.jpg'
 import Card from './Card'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const photos = [
   { src: gallery01, width: 2048, height: 1365 },
@@ -315,7 +315,7 @@ export default function Main({
       >
         <h2 className="major">about us</h2>
         <span className="image main">
-          <img src={tscArtistPhoto} alt="" />
+          <StaticImage src="../images/tsc-artist-photo.png" alt="ArtistPhoto" />
         </span>
         <p>
           「27CLUB」と言う言葉がある。
