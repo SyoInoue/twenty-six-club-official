@@ -50,7 +50,7 @@ export default function Image({ filename, alt }: Props) {
   return (
     <div>
       {image ? (
-        <GatsbyImage image={image} alt="代替テキスト" />
+        <GatsbyImage image={image} alt={alt} />
       ) : (
         <p>画像がありません。</p>
       )}

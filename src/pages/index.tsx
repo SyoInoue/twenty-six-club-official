@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 import Layout from '../components/layout'
+import Seo from '../components/Seo'
 
 type Props = {
   /** ページのURL */
@@ -10,21 +11,9 @@ type Props = {
 }
 
 /**
- * メタ情報
+ * メタ情報の付与
  */
-export function Head() {
-  return (
-    <>
-      <html lang="ja" />
-      <title>TWENTY SIX CLUB OFFICIAL SITE</title>
-      <meta
-        name="description"
-        content="Once creation is tailored to be understood, it ceases to be art."
-      />
-      <meta name="keywords" content="Electro Rock Band" />
-    </>
-  )
-}
+export const Head = () => <Seo />
 
 /**
  * メインページ
