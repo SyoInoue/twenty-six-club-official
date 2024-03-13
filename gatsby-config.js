@@ -16,9 +16,8 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `gatsby-starter-default`,
-        path: `${__dirname}/src/images`,
-        short_name: `starter`,
+        name: `images`,
+        path: `./src/images/`,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#000000`,

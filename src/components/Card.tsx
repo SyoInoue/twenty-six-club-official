@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from './Image'
 
 type Props = {
   /** リリース日 */
@@ -37,7 +38,7 @@ export default function Card({
 
   return (
     <div className="card">
-      <img className="artwork" src={jacket} alt={alt}></img>
+      <Image filename={jacket} alt={alt} />
       <p className="day">{day}</p>
       <p className="type">{type}</p>
       <p className="label">{label}</p>

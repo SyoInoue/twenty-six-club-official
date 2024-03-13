@@ -196,7 +196,7 @@ const cardsData = [
     label: 'Feeling',
     description: `1. Feeling
 2. situations -Adult Remix-`,
-    jacket: feelingJacket,
+    jacket: 'feeling-jacket.jpg',
     alt: 'FeelingJacket',
   },
   {
@@ -205,7 +205,7 @@ const cardsData = [
     label: '淑女',
     description: `1. 淑女
     2. Stay who you are -Tropical Remix-`,
-    jacket: ladyJacket,
+    jacket: 'lady-jacket.jpg',
     alt: '淑女Jacket',
   },
   {
@@ -214,7 +214,7 @@ const cardsData = [
     label: 'オーガズム',
     description: `1. オーガズム
 2. 変わりゆく情景`,
-    jacket: orgasmJacket,
+    jacket: 'orgasm-jacket.jpg',
     alt: 'オーガズムJacket',
   },
   {
@@ -222,7 +222,7 @@ const cardsData = [
     type: 'Single',
     label: '零',
     description: '1. 零',
-    jacket: zeroJacket,
+    jacket: 'zero-jacket.png',
     alt: '零Jacket',
   },
   {
@@ -230,7 +230,7 @@ const cardsData = [
     type: 'Single',
     label: 'キャンディーポップ',
     description: '1. キャンディーポップ',
-    jacket: candyPopJacket,
+    jacket: 'candy-pop-jacket.png',
     alt: 'キャンディーポップJacket',
   },
   {
@@ -238,7 +238,7 @@ const cardsData = [
     type: 'Single',
     label: 'EVER',
     description: '1. EVER',
-    jacket: everJacket,
+    jacket: 'ever-jacket.png',
     alt: 'EverJacket',
   },
   {
@@ -256,7 +256,7 @@ const cardsData = [
 9. 見世物
 10. Feeling（Toy mix.）
 11. 泡沫`,
-    jacket: toyJacket,
+    jacket: 'toy-jacket.png',
     alt: 'ToyJacket',
   },
   {
@@ -269,7 +269,7 @@ const cardsData = [
 4. respiration（inst.）
 5. if
 6. 00:00`,
-    jacket: sixNearlyEqualJacket,
+    jacket: 'six-nearly-equal-jacket.png',
     alt: 'SixNearlyEqualJacket',
   },
 ]
