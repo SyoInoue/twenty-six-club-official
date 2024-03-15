@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "typeRoots": [".src/types/use-sound.d.ts"]
   },
   "include": ["./src/**/*"]
 }

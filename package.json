@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-photo-album": "^2.3.1",
     "sass": "^1.71.1",
+    "use-sound": "^4.0.1",
     "yet-another-react-lightbox": "^3.17.0"
   },
   "keywords": [
@@ -33,6 +34,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@types/howler": "^2.2.11",
     "prettier": "^1.19.1"
   },
   "repository": {
