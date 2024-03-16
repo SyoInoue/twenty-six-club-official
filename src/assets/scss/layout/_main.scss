@@ -245,5 +245,9 @@
 		position: absolute;
 		right: 0;
 		transform: translateY(0.1rem);
+
+		@include breakpoint(small) {
+		transform: translateY(-0.1rem);
+		}
 	}
 }
