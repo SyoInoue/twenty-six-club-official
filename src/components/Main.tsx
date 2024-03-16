@@ -1,13 +1,5 @@
 import React, { useState } from 'react'
 import CloseButton from './CloseButton'
-import toyJacket from '../images/toy-jacket.png'
-import sixNearlyEqualJacket from '../images/six-nearly-equal-jacket.png'
-import feelingJacket from '../images/feeling-jacket.jpg'
-import ladyJacket from '../images/lady-jacket.jpg'
-import orgasmJacket from '../images/orgasm-jacket.jpg'
-import candyPopJacket from '../images/candy-pop-jacket.png'
-import everJacket from '../images/ever-jacket.png'
-import zeroJacket from '../images/zero-jacket.png'
 import PhotoAlbum from 'react-photo-album'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
@@ -15,178 +7,514 @@ import Slideshow from 'yet-another-react-lightbox/plugins/slideshow'
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
 import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
-import gallery01 from '../images/gallery/gallery-01.jpg'
-import gallery02 from '../images/gallery/gallery-02.jpg'
-import gallery03 from '../images/gallery/gallery-03.jpg'
-import gallery04 from '../images/gallery/gallery-04.jpg'
-import gallery05 from '../images/gallery/gallery-05.jpg'
-import gallery06 from '../images/gallery/gallery-06.jpg'
-import gallery07 from '../images/gallery/gallery-07.jpg'
-import gallery08 from '../images/gallery/gallery-08.jpg'
-import gallery09 from '../images/gallery/gallery-09.jpg'
-import gallery10 from '../images/gallery/gallery-10.jpg'
-import gallery11 from '../images/gallery/gallery-11.jpg'
-import gallery12 from '../images/gallery/gallery-12.jpg'
-import gallery13 from '../images/gallery/gallery-13.jpg'
-import gallery14 from '../images/gallery/gallery-14.jpg'
-import gallery15 from '../images/gallery/gallery-15.jpg'
-import gallery16 from '../images/gallery/gallery-16.jpg'
-import gallery17 from '../images/gallery/gallery-17.jpg'
-import gallery18 from '../images/gallery/gallery-18.jpg'
-import gallery19 from '../images/gallery/gallery-19.jpg'
-import gallery20 from '../images/gallery/gallery-20.jpg'
-import gallery21 from '../images/gallery/gallery-21.jpg'
-import gallery22 from '../images/gallery/gallery-22.jpg'
-import gallery23 from '../images/gallery/gallery-23.jpg'
-import gallery24 from '../images/gallery/gallery-24.jpg'
-import gallery25 from '../images/gallery/gallery-25.jpg'
-import gallery26 from '../images/gallery/gallery-26.jpg'
-import gallery27 from '../images/gallery/gallery-27.jpg'
-import gallery28 from '../images/gallery/gallery-28.jpg'
-import gallery29 from '../images/gallery/gallery-29.jpg'
-import gallery30 from '../images/gallery/gallery-30.jpg'
-import gallery31 from '../images/gallery/gallery-31.jpg'
-import gallery32 from '../images/gallery/gallery-32.jpg'
-import gallery33 from '../images/gallery/gallery-33.jpg'
-import gallery34 from '../images/gallery/gallery-34.jpg'
-import gallery35 from '../images/gallery/gallery-35.jpg'
-import gallery36 from '../images/gallery/gallery-36.jpg'
-import gallery37 from '../images/gallery/gallery-37.jpg'
-import gallery38 from '../images/gallery/gallery-38.jpg'
-import gallery39 from '../images/gallery/gallery-39.jpg'
-import gallery40 from '../images/gallery/gallery-40.jpg'
-import gallery41 from '../images/gallery/gallery-41.jpg'
-import gallery42 from '../images/gallery/gallery-42.jpg'
-import gallery43 from '../images/gallery/gallery-43.jpg'
-import gallery44 from '../images/gallery/gallery-44.jpg'
-import gallery45 from '../images/gallery/gallery-45.jpg'
-import gallery46 from '../images/gallery/gallery-46.jpg'
-import gallery47 from '../images/gallery/gallery-47.jpg'
-import gallery48 from '../images/gallery/gallery-48.jpg'
-import gallery49 from '../images/gallery/gallery-49.jpg'
-import gallery50 from '../images/gallery/gallery-50.jpg'
-import gallery51 from '../images/gallery/gallery-51.jpg'
-import gallery52 from '../images/gallery/gallery-52.jpg'
-import gallery53 from '../images/gallery/gallery-53.jpg'
-import gallery54 from '../images/gallery/gallery-54.jpg'
-import gallery55 from '../images/gallery/gallery-55.jpg'
-import gallery56 from '../images/gallery/gallery-56.jpg'
-import gallery57 from '../images/gallery/gallery-57.jpg'
-import gallery58 from '../images/gallery/gallery-58.jpg'
-import gallery59 from '../images/gallery/gallery-59.jpg'
-import gallery60 from '../images/gallery/gallery-60.jpg'
-import gallery61 from '../images/gallery/gallery-61.jpg'
-import gallery62 from '../images/gallery/gallery-62.jpg'
-import gallery63 from '../images/gallery/gallery-63.jpg'
-import gallery64 from '../images/gallery/gallery-64.jpg'
-import gallery65 from '../images/gallery/gallery-65.jpg'
-import gallery66 from '../images/gallery/gallery-66.jpg'
-import gallery67 from '../images/gallery/gallery-67.jpg'
-import gallery68 from '../images/gallery/gallery-68.jpg'
-import gallery69 from '../images/gallery/gallery-69.jpg'
-import gallery70 from '../images/gallery/gallery-70.jpg'
-import gallery71 from '../images/gallery/gallery-71.jpg'
-import gallery72 from '../images/gallery/gallery-72.jpg'
-import gallery73 from '../images/gallery/gallery-73.jpg'
-import gallery74 from '../images/gallery/gallery-74.jpg'
-import gallery75 from '../images/gallery/gallery-75.jpg'
-import gallery76 from '../images/gallery/gallery-76.jpg'
-import gallery77 from '../images/gallery/gallery-77.jpg'
-import gallery78 from '../images/gallery/gallery-78.jpg'
-import gallery79 from '../images/gallery/gallery-79.jpg'
-import gallery80 from '../images/gallery/gallery-80.jpg'
-import gallery81 from '../images/gallery/gallery-81.jpg'
-import gallery82 from '../images/gallery/gallery-82.jpg'
-import gallery83 from '../images/gallery/gallery-83.jpg'
-import gallery84 from '../images/gallery/gallery-84.jpg'
 import Card from './Card'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const photos = [
-  { src: gallery01, width: 2048, height: 1365 },
-  { src: gallery02, width: 2048, height: 1365 },
-  { src: gallery03, width: 2048, height: 1365 },
-  { src: gallery04, width: 2048, height: 1365 },
-  { src: gallery05, width: 2048, height: 1365 },
-  { src: gallery06, width: 2048, height: 1365 },
-  { src: gallery07, width: 1365, height: 2048 },
-  { src: gallery08, width: 2048, height: 1365 },
-  { src: gallery09, width: 1365, height: 2048 },
-  { src: gallery10, width: 2048, height: 1365 },
-  { src: gallery11, width: 1568, height: 1044 },
-  { src: gallery12, width: 1568, height: 1044 },
-  { src: gallery13, width: 1568, height: 1044 },
-  { src: gallery14, width: 1568, height: 1044 },
-  { src: gallery15, width: 1044, height: 1568 },
-  { src: gallery16, width: 1568, height: 1044 },
-  { src: gallery17, width: 1568, height: 1044 },
-  { src: gallery18, width: 1568, height: 1044 },
-  { src: gallery19, width: 1080, height: 1620 },
-  { src: gallery20, width: 1568, height: 1044 },
-  { src: gallery21, width: 1568, height: 1044 },
-  { src: gallery22, width: 1568, height: 1044 },
-  { src: gallery23, width: 1568, height: 1044 },
-  { src: gallery24, width: 1568, height: 1044 },
-  { src: gallery25, width: 1620, height: 1080 },
-  { src: gallery26, width: 1568, height: 1044 },
-  { src: gallery27, width: 1568, height: 1044 },
-  { src: gallery28, width: 1568, height: 1044 },
-  { src: gallery29, width: 1568, height: 1044 },
-  { src: gallery30, width: 1080, height: 1620 },
-  { src: gallery31, width: 1568, height: 1044 },
-  { src: gallery32, width: 1044, height: 1568 },
-  { src: gallery33, width: 1568, height: 1044 },
-  { src: gallery34, width: 1568, height: 1044 },
-  { src: gallery35, width: 1568, height: 1044 },
-  { src: gallery36, width: 1044, height: 1568 },
-  { src: gallery37, width: 1568, height: 1044 },
-  { src: gallery38, width: 2048, height: 1367 },
-  { src: gallery39, width: 1568, height: 1044 },
-  { src: gallery40, width: 1568, height: 1044 },
-  { src: gallery41, width: 1044, height: 1568 },
-  { src: gallery42, width: 1568, height: 1044 },
-  { src: gallery43, width: 2048, height: 1367 },
-  { src: gallery44, width: 1044, height: 1568 },
-  { src: gallery45, width: 1044, height: 1568 },
-  { src: gallery46, width: 1568, height: 1044 },
-  { src: gallery47, width: 1568, height: 1044 },
-  { src: gallery48, width: 1568, height: 1044 },
-  { src: gallery49, width: 1568, height: 1044 },
-  { src: gallery50, width: 1568, height: 1044 },
-  { src: gallery51, width: 1568, height: 1044 },
-  { src: gallery52, width: 1568, height: 1044 },
-  { src: gallery53, width: 1568, height: 1044 },
-  { src: gallery54, width: 1044, height: 1568 },
-  { src: gallery55, width: 1568, height: 1044 },
-  { src: gallery56, width: 1044, height: 1568 },
-  { src: gallery57, width: 1568, height: 1044 },
-  { src: gallery58, width: 1568, height: 1044 },
-  { src: gallery59, width: 1568, height: 1044 },
-  { src: gallery60, width: 1568, height: 1044 },
-  { src: gallery61, width: 1568, height: 1044 },
-  { src: gallery62, width: 1568, height: 1044 },
-  { src: gallery63, width: 1568, height: 1044 },
-  { src: gallery64, width: 1568, height: 1044 },
-  { src: gallery65, width: 1044, height: 1568 },
-  { src: gallery66, width: 1566, height: 1046 },
-  { src: gallery67, width: 1566, height: 1046 },
-  { src: gallery68, width: 1566, height: 1046 },
-  { src: gallery69, width: 1566, height: 1046 },
-  { src: gallery70, width: 1566, height: 1046 },
-  { src: gallery71, width: 1566, height: 1046 },
-  { src: gallery72, width: 1566, height: 1046 },
-  { src: gallery73, width: 1566, height: 1046 },
-  { src: gallery74, width: 1568, height: 1044 },
-  { src: gallery75, width: 1568, height: 1044 },
-  { src: gallery76, width: 1568, height: 1044 },
-  { src: gallery77, width: 1568, height: 1044 },
-  { src: gallery78, width: 1568, height: 1044 },
-  { src: gallery79, width: 1044, height: 1568 },
-  { src: gallery80, width: 1566, height: 1046 },
-  { src: gallery81, width: 1566, height: 1046 },
-  { src: gallery82, width: 1566, height: 1046 },
-  { src: gallery83, width: 1566, height: 1046 },
-  { src: gallery84, width: 4538, height: 3546 },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581304/gallery/gallery-01.jpg',
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581308/gallery/gallery-02.jpg',
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581307/gallery/gallery-03.jpg',
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581299/gallery/gallery-04.jpg',
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581302/gallery/gallery-05.jpg',
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581298/gallery/gallery-06.jpg',
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581296/gallery/gallery-07.jpg',
+    width: 1365,
+    height: 2048,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581260/gallery/gallery-08.jpg',
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581261/gallery/gallery-09.jpg',
+    width: 1365,
+    height: 2048,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581300/gallery/gallery-10.jpg',
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581302/gallery/gallery-11.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581297/gallery/gallery-12.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581297/gallery/gallery-13.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581305/gallery/gallery-14.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581306/gallery/gallery-15.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581306/gallery/gallery-16.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581308/gallery/gallery-17.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581258/gallery/gallery-18.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581254/gallery/gallery-19.jpg',
+    width: 1080,
+    height: 1620,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581259/gallery/gallery-20.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581262/gallery/gallery-21.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581264/gallery/gallery-22.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581264/gallery/gallery-23.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581258/gallery/gallery-24.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581256/gallery/gallery-25.jpg',
+    width: 1620,
+    height: 1080,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581254/gallery/gallery-26.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581255/gallery/gallery-27.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581304/gallery/gallery-28.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581303/gallery/gallery-29.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581257/gallery/gallery-30.jpg',
+    width: 1080,
+    height: 1620,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581256/gallery/gallery-31.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581253/gallery/gallery-32.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581254/gallery/gallery-33.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581259/gallery/gallery-34.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581261/gallery/gallery-35.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581265/gallery/gallery-36.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581263/gallery/gallery-37.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581300/gallery/gallery-38.jpg',
+    width: 2048,
+    height: 1367,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581301/gallery/gallery-39.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581278/gallery/gallery-40.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581281/gallery/gallery-41.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581276/gallery/gallery-42.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581273/gallery/gallery-43.jpg',
+    width: 2048,
+    height: 1367,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581268/gallery/gallery-44.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581267/gallery/gallery-45.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581270/gallery/gallery-46.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581272/gallery/gallery-47.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581295/gallery/gallery-48.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581293/gallery/gallery-49.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581268/gallery/gallery-50.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581266/gallery/gallery-51.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581270/gallery/gallery-52.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581272/gallery/gallery-53.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581277/gallery/gallery-54.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581282/gallery/gallery-55.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581276/gallery/gallery-56.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581274/gallery/gallery-57.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581283/gallery/gallery-58.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581287/gallery/gallery-59.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581294/gallery/gallery-60.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581291/gallery/gallery-61.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581289/gallery/gallery-62.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581291/gallery/gallery-63.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581284/gallery/gallery-64.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581285/gallery/gallery-65.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581289/gallery/gallery-66.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581286/gallery/gallery-67.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581279/gallery/gallery-68.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581281/gallery/gallery-69.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581283/gallery/gallery-70.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581285/gallery/gallery-71.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581288/gallery/gallery-72.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581287/gallery/gallery-73.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581295/gallery/gallery-74.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581292/gallery/gallery-75.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581293/gallery/gallery-76.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581290/gallery/gallery-77.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581269/gallery/gallery-78.jpg',
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581266/gallery/gallery-79.jpg',
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581274/gallery/gallery-80.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581275/gallery/gallery-81.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581280/gallery/gallery-82.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581279/gallery/gallery-83.jpg',
+    width: 1566,
+    height: 1046,
+  },
+  {
+    src:
+      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581271/gallery/gallery-84.jpg',
+    width: 4538,
+    height: 3546,
+  },
 ]
 
 const cardsData = [
@@ -194,8 +522,18 @@ const cardsData = [
     day: '2019/01/25',
     type: 'Single',
     label: 'Feeling',
-    description: `1. Feeling
-2. situations -Adult Remix-`,
+    description: [
+      {
+        title: '1. Feeling',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710514759/Feeling/Feeling_gaiuvh.wav',
+      },
+      {
+        title: '2. situations -Adult Remix-',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710514738/Feeling/situations_-Adult_Remix-_nnitb1.wav',
+      },
+    ],
     jacket: 'feeling-jacket.jpg',
     alt: 'FeelingJacket',
   },
@@ -203,8 +541,18 @@ const cardsData = [
     day: '2019/03/14',
     type: 'Single',
     label: '淑女',
-    description: `1. 淑女
-    2. Stay who you are -Tropical Remix-`,
+    description: [
+      {
+        title: '1. 淑女',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577699/Lady/Lady_aqnf2e.wav',
+      },
+      {
+        title: '2. Stay who you are -Tropical Remix-',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577713/Lady/Stay_who_you_are_-Tropical_Remix-_grxq1a.wav',
+      },
+    ],
     jacket: 'lady-jacket.jpg',
     alt: '淑女Jacket',
   },
@@ -212,8 +560,18 @@ const cardsData = [
     day: '2019/05/20',
     type: 'Single',
     label: 'オーガズム',
-    description: `1. オーガズム
-2. 変わりゆく情景`,
+    description: [
+      {
+        title: '1. オーガズム',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577656/Orgasm/orgasm_leyk8j.wav',
+      },
+      {
+        title: '2. 変わりゆく情景',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577682/Orgasm/kawariyukuzyokei_ro65wz.wav',
+      },
+    ],
     jacket: 'orgasm-jacket.jpg',
     alt: 'オーガズムJacket',
   },
@@ -221,7 +579,13 @@ const cardsData = [
     day: '2019/09/01',
     type: 'Single',
     label: '零',
-    description: '1. 零',
+    description: [
+      {
+        title: '1. 零',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595674/zero/zero_azhgul.wav',
+      },
+    ],
     jacket: 'zero-jacket.png',
     alt: '零Jacket',
   },
@@ -229,7 +593,13 @@ const cardsData = [
     day: '2019/11/01',
     type: 'Single',
     label: 'キャンディーポップ',
-    description: '1. キャンディーポップ',
+    description: [
+      {
+        title: '1. キャンディーポップ',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577770/CandyPop/candypop_qytn6l.wav',
+      },
+    ],
     jacket: 'candy-pop-jacket.png',
     alt: 'キャンディーポップJacket',
   },
@@ -237,7 +607,13 @@ const cardsData = [
     day: '2020/05/16',
     type: 'Single',
     label: 'EVER',
-    description: '1. EVER',
+    description: [
+      {
+        title: '1. EVER',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577973/Ever/EVER_zbwcam.wav',
+      },
+    ],
     jacket: 'ever-jacket.png',
     alt: 'EverJacket',
   },
@@ -245,17 +621,63 @@ const cardsData = [
     day: '2019/10/25',
     type: 'Album',
     label: 'Toy',
-    description: `1. ME
-2. 馴れ初め
-3. 灯
-4. 淑女（Toy mix.）
-5. 野辺送り
-6. 101（Interlude.）
-7. 402号室の住人
-8. オーガズム（Toy mix.）
-9. 見世物
-10. Feeling（Toy mix.）
-11. 泡沫`,
+    description: [
+      {
+        title: '1. ME',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595547/Toy/ME_hbyhts.wav',
+      },
+      {
+        title: '2. 馴れ初め',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595552/Toy/naresome_k1gqcf.wav',
+      },
+      {
+        title: '3. 灯',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595549/Toy/akari_bifzce.wav',
+      },
+      {
+        title: '4. 淑女（Toy mix.）',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595538/Toy/lady_Toy_mix._s8vcuc.wav',
+      },
+      {
+        title: '5. 野辺送り',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595562/Toy/nobeokuri_ajduw2.wav',
+      },
+      {
+        title: '6. 101（Interlude.）',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595578/Toy/101_Interlude._p5advl.wav',
+      },
+      {
+        title: '7. 402号室の住人',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595585/Toy/402gousitunozyunin_jgijq6.wav',
+      },
+      {
+        title: '8. オーガズム（Toy mix.）',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595540/Toy/orgasm_Toy_mix._nkd6ci.wav',
+      },
+      {
+        title: '9. 見世物',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595556/Toy/misemono_jlzkju.wav',
+      },
+      {
+        title: '10. Feeling（Toy mix.）',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595565/Toy/feeling_Toy_mix._bj1bce.wav',
+      },
+      {
+        title: '11. 泡沫',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595570/Toy/utakata_itcaoy.wav',
+      },
+    ],
     jacket: 'toy-jacket.png',
     alt: 'ToyJacket',
   },
@@ -263,12 +685,38 @@ const cardsData = [
     day: '2020/04/01',
     type: 'Album',
     label: 'Six Nearly Equal',
-    description: `1. XXVI（inst.）
-2. sexual
-3. mystique
-4. respiration（inst.）
-5. if
-6. 00:00`,
+    description: [
+      {
+        title: '1. XXVI（inst.）',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508074/SixNearlyEqual/XXVI_urivwd.wav',
+      },
+      {
+        title: '2. sexual',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508087/SixNearlyEqual/sexual_sofmla.wav',
+      },
+      {
+        title: '3. mystique',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508086/SixNearlyEqual/mystique_cxnuwi.wav',
+      },
+      {
+        title: '4. respiration（inst.）',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508080/SixNearlyEqual/respiration_bp65jg.wav',
+      },
+      {
+        title: '5. if',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508092/SixNearlyEqual/if_bm06ww.wav',
+      },
+      {
+        title: '6. 00:00',
+        musicUrl:
+          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508084/SixNearlyEqual/0000_ajomfr.wav',
+      },
+    ],
     jacket: 'six-nearly-equal-jacket.png',
     alt: 'SixNearlyEqualJacket',
   },
