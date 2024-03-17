@@ -748,11 +748,12 @@ export default function Main({
   /** GalleryをスライドさせるためのState */
   const [index, setIndex] = useState(-1)
 
+  /** Youtube動画の表示State */
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
 
-  const thumbnailUrl = 'http://i.ytimg.com/vi/mVV6SYYybj0/default.jpg' // YouTubeのサムネイルURL
-  const videoUrl = 'https://www.youtube.com/embed/mVV6SYYybj0?autoplay=1' // 自動再生を含む動画のURL
-
+  /**
+   * サムネイルをクリックした際に動画を表示する関数
+   */
   const handleClickVideoThumbnail = () => {
     setIsVideoLoaded(true)
   }
@@ -820,16 +821,19 @@ export default function Main({
         <h2 className="major">video</h2>
         <span className="image main">
           <div className="responsive-iframe">
-            {isVideoLoaded ? (
-              <img
-                src={thumbnailUrl}
-                alt="YouTube Video Thumbnail"
-                style={{ cursor: 'pointer' }}
+            {!isVideoLoaded ? (
+              <button
                 onClick={handleClickVideoThumbnail}
-              />
+                style={{ width: '100%', height: '100%' }}
+              >
+                <StaticImage
+                  src="../images/sixnearlyequal-thumbnail.png"
+                  alt="thumbnail"
+                />
+              </button>
             ) : (
               <iframe
-                src={videoUrl}
+                src="https://www.youtube.com/embed/mVV6SYYybj0?autoplay=1"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                 allowFullScreen
