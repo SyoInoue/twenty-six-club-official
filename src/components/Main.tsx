@@ -748,6 +748,15 @@ export default function Main({
   /** GalleryをスライドさせるためのState */
   const [index, setIndex] = useState(-1)
 
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
+
+  const thumbnailUrl = 'http://i.ytimg.com/vi/mVV6SYYybj0/default.jpg' // YouTubeのサムネイルURL
+  const videoUrl = 'https://www.youtube.com/embed/mVV6SYYybj0?autoplay=1' // 自動再生を含む動画のURL
+
+  const handleClickVideoThumbnail = () => {
+    setIsVideoLoaded(true)
+  }
+
   return (
     <div
       id="main"
@@ -811,12 +820,21 @@ export default function Main({
         <h2 className="major">video</h2>
         <span className="image main">
           <div className="responsive-iframe">
-            <iframe
-              src="https://www.youtube.com/embed/mVV6SYYybj0?si=SwlhSy75YUrMGNE9"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-              allowFullScreen
-            ></iframe>
+            {isVideoLoaded ? (
+              <img
+                src={thumbnailUrl}
+                alt="YouTube Video Thumbnail"
+                style={{ cursor: 'pointer' }}
+                onClick={handleClickVideoThumbnail}
+              />
+            ) : (
+              <iframe
+                src={videoUrl}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                allowFullScreen
+              ></iframe>
+            )}
           </div>
         </span>
         <CloseButton onCloseArticle={onCloseArticle} />
