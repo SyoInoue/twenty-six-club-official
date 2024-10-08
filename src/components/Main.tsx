@@ -9,511 +9,519 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import Card from './Card'
 import { StaticImage } from 'gatsby-plugin-image'
+import {
+  LivePhoto1,
+  LivePhoto2,
+  LivePhoto3,
+  LivePhoto4,
+  LivePhoto5,
+  LivePhoto6,
+  LivePhoto7,
+  LivePhoto8,
+  LivePhoto9,
+  LivePhoto10,
+  LivePhoto11,
+  LivePhoto12,
+  LivePhoto13,
+  LivePhoto14,
+  LivePhoto15,
+  LivePhoto16,
+  LivePhoto17,
+  LivePhoto18,
+  LivePhoto19,
+  LivePhoto20,
+  LivePhoto21,
+  LivePhoto22,
+  LivePhoto23,
+  LivePhoto24,
+  LivePhoto25,
+  LivePhoto26,
+  LivePhoto27,
+  LivePhoto28,
+  LivePhoto29,
+  LivePhoto30,
+  LivePhoto31,
+  LivePhoto32,
+  LivePhoto33,
+  LivePhoto34,
+  LivePhoto35,
+  LivePhoto36,
+  LivePhoto37,
+  LivePhoto38,
+  LivePhoto39,
+  LivePhoto40,
+  LivePhoto41,
+  LivePhoto42,
+  LivePhoto43,
+  LivePhoto44,
+  LivePhoto45,
+  LivePhoto46,
+  LivePhoto47,
+  LivePhoto48,
+  LivePhoto49,
+  LivePhoto50,
+  LivePhoto51,
+  LivePhoto52,
+  LivePhoto53,
+  LivePhoto54,
+  LivePhoto55,
+  LivePhoto56,
+  LivePhoto57,
+  LivePhoto58,
+  LivePhoto59,
+  LivePhoto60,
+  LivePhoto61,
+  LivePhoto62,
+  LivePhoto63,
+  LivePhoto64,
+  LivePhoto65,
+  LivePhoto66,
+  LivePhoto67,
+  LivePhoto68,
+  LivePhoto69,
+  LivePhoto70,
+  LivePhoto71,
+  LivePhoto72,
+  LivePhoto73,
+  LivePhoto74,
+  LivePhoto75,
+  LivePhoto76,
+  LivePhoto77,
+  LivePhoto78,
+  LivePhoto79,
+  LivePhoto80,
+  LivePhoto81,
+  LivePhoto82,
+  LivePhoto83,
+  LivePhoto84,
+  LivePhoto85,
+} from '../components/LivePhoto'
 
 const photos = [
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581304/gallery/gallery-01.jpg',
+    src: LivePhoto1,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto2,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto3,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto4,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto5,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto6,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto7,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto8,
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src: LivePhoto9,
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src: LivePhoto10,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto11,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto12,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto13,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto14,
     width: 2048,
     height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581308/gallery/gallery-02.jpg',
+    src: LivePhoto15,
     width: 2048,
     height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581307/gallery/gallery-03.jpg',
+    src: LivePhoto16,
     width: 2048,
     height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581299/gallery/gallery-04.jpg',
+    src: LivePhoto17,
     width: 2048,
     height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581302/gallery/gallery-05.jpg',
+    src: LivePhoto18,
     width: 2048,
     height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581298/gallery/gallery-06.jpg',
-    width: 2048,
-    height: 1365,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581296/gallery/gallery-07.jpg',
+    src: LivePhoto19,
     width: 1365,
     height: 2048,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581260/gallery/gallery-08.jpg',
+    src: LivePhoto20,
     width: 2048,
     height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581261/gallery/gallery-09.jpg',
-    width: 1365,
-    height: 2048,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581300/gallery/gallery-10.jpg',
+    src: LivePhoto21,
     width: 2048,
     height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581302/gallery/gallery-11.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581297/gallery/gallery-12.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581297/gallery/gallery-13.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581305/gallery/gallery-14.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581306/gallery/gallery-15.jpg',
-    width: 1044,
-    height: 1568,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581306/gallery/gallery-16.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581308/gallery/gallery-17.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581258/gallery/gallery-18.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581254/gallery/gallery-19.jpg',
-    width: 1080,
-    height: 1620,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581259/gallery/gallery-20.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581262/gallery/gallery-21.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581264/gallery/gallery-22.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581264/gallery/gallery-23.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581258/gallery/gallery-24.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581256/gallery/gallery-25.jpg',
-    width: 1620,
-    height: 1080,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581254/gallery/gallery-26.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581255/gallery/gallery-27.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581304/gallery/gallery-28.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581303/gallery/gallery-29.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581257/gallery/gallery-30.jpg',
-    width: 1080,
-    height: 1620,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581256/gallery/gallery-31.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581253/gallery/gallery-32.jpg',
-    width: 1044,
-    height: 1568,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581254/gallery/gallery-33.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581259/gallery/gallery-34.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581261/gallery/gallery-35.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581265/gallery/gallery-36.jpg',
-    width: 1044,
-    height: 1568,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581263/gallery/gallery-37.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581300/gallery/gallery-38.jpg',
+    src: LivePhoto22,
     width: 2048,
-    height: 1367,
+    height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581301/gallery/gallery-39.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581278/gallery/gallery-40.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581281/gallery/gallery-41.jpg',
-    width: 1044,
-    height: 1568,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581276/gallery/gallery-42.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581273/gallery/gallery-43.jpg',
+    src: LivePhoto23,
     width: 2048,
-    height: 1367,
+    height: 1365,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581268/gallery/gallery-44.jpg',
+    src: LivePhoto24,
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src: LivePhoto25,
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src: LivePhoto26,
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src: LivePhoto27,
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src: LivePhoto28,
+    width: 2048,
+    height: 1365,
+  },
+  {
+    src: LivePhoto29,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto30,
+    width: 1568,
+    height: 1046,
+  },
+  {
+    src: LivePhoto31,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto32,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto33,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto34,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto35,
     width: 1044,
     height: 1568,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581267/gallery/gallery-45.jpg',
+    src: LivePhoto36,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto37,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto38,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto39,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto40,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto41,
     width: 1044,
     height: 1568,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581270/gallery/gallery-46.jpg',
+    src: LivePhoto42,
     width: 1568,
     height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581272/gallery/gallery-47.jpg',
+    src: LivePhoto43,
     width: 1568,
     height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581295/gallery/gallery-48.jpg',
+    src: LivePhoto44,
     width: 1568,
     height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581293/gallery/gallery-49.jpg',
+    src: LivePhoto45,
     width: 1568,
     height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581268/gallery/gallery-50.jpg',
+    src: LivePhoto46,
     width: 1568,
     height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581266/gallery/gallery-51.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581270/gallery/gallery-52.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581272/gallery/gallery-53.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581277/gallery/gallery-54.jpg',
+    src: LivePhoto47,
     width: 1044,
     height: 1568,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581282/gallery/gallery-55.jpg',
+    src: LivePhoto48,
     width: 1568,
     height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581276/gallery/gallery-56.jpg',
+    src: LivePhoto49,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto50,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto51,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto52,
     width: 1044,
     height: 1568,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581274/gallery/gallery-57.jpg',
+    src: LivePhoto53,
     width: 1568,
     height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581283/gallery/gallery-58.jpg',
+    src: LivePhoto54,
     width: 1568,
     height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581287/gallery/gallery-59.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581294/gallery/gallery-60.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581291/gallery/gallery-61.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581289/gallery/gallery-62.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581291/gallery/gallery-63.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581284/gallery/gallery-64.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581285/gallery/gallery-65.jpg',
+    src: LivePhoto55,
     width: 1044,
     height: 1568,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581289/gallery/gallery-66.jpg',
-    width: 1566,
-    height: 1046,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581286/gallery/gallery-67.jpg',
-    width: 1566,
-    height: 1046,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581279/gallery/gallery-68.jpg',
-    width: 1566,
-    height: 1046,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581281/gallery/gallery-69.jpg',
-    width: 1566,
-    height: 1046,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581283/gallery/gallery-70.jpg',
-    width: 1566,
-    height: 1046,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581285/gallery/gallery-71.jpg',
-    width: 1566,
-    height: 1046,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581288/gallery/gallery-72.jpg',
-    width: 1566,
-    height: 1046,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581287/gallery/gallery-73.jpg',
-    width: 1566,
-    height: 1046,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581295/gallery/gallery-74.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581292/gallery/gallery-75.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581293/gallery/gallery-76.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581290/gallery/gallery-77.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581269/gallery/gallery-78.jpg',
-    width: 1568,
-    height: 1044,
-  },
-  {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581266/gallery/gallery-79.jpg',
+    src: LivePhoto56,
     width: 1044,
     height: 1568,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581274/gallery/gallery-80.jpg',
-    width: 1566,
-    height: 1046,
+    src: LivePhoto57,
+    width: 1568,
+    height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581275/gallery/gallery-81.jpg',
-    width: 1566,
-    height: 1046,
+    src: LivePhoto58,
+    width: 1568,
+    height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581280/gallery/gallery-82.jpg',
-    width: 1566,
-    height: 1046,
+    src: LivePhoto59,
+    width: 1568,
+    height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581279/gallery/gallery-83.jpg',
-    width: 1566,
-    height: 1046,
+    src: LivePhoto60,
+    width: 1568,
+    height: 1044,
   },
   {
-    src:
-      'https://res.cloudinary.com/ds3iqjqqh/image/upload/v1710581271/gallery/gallery-84.jpg',
-    width: 4538,
-    height: 3546,
+    src: LivePhoto61,
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src: LivePhoto62,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto63,
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src: LivePhoto64,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto65,
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src: LivePhoto66,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto67,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto68,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto69,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto70,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto71,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto72,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto73,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto74,
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src: LivePhoto75,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto76,
+    width: 1044,
+    height: 1568,
+  },
+  {
+    src: LivePhoto77,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto78,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto79,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto80,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto81,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto82,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto83,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto84,
+    width: 1568,
+    height: 1044,
+  },
+  {
+    src: LivePhoto85,
+    width: 1044,
+    height: 1568,
   },
 ]
 
@@ -525,13 +533,12 @@ const cardsData = [
     description: [
       {
         title: '1. Feeling',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710514759/Feeling/Feeling_gaiuvh.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/feeling',
       },
       {
         title: '2. situations -Adult Remix-',
         musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710514738/Feeling/situations_-Adult_Remix-_nnitb1.wav',
+          'https://soundcloud.com/syo_music_channnel/situations-adult-remix',
       },
     ],
     jacket: 'feeling-jacket.jpg',
@@ -544,13 +551,12 @@ const cardsData = [
     description: [
       {
         title: '1. 淑女',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577699/Lady/Lady_aqnf2e.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/g4lyrapw7sjb',
       },
       {
         title: '2. Stay who you are -Tropical Remix-',
         musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577713/Lady/Stay_who_you_are_-Tropical_Remix-_grxq1a.wav',
+          'https://soundcloud.com/syo_music_channnel/stay-who-you-are-tropical-remix',
       },
     ],
     jacket: 'lady-jacket.jpg',
@@ -563,13 +569,11 @@ const cardsData = [
     description: [
       {
         title: '1. オーガズム',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577656/Orgasm/orgasm_leyk8j.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/mbgsbr3dwc3x',
       },
       {
         title: '2. 変わりゆく情景',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577682/Orgasm/kawariyukuzyokei_ro65wz.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/58iqejijakb6',
       },
     ],
     jacket: 'orgasm-jacket.jpg',
@@ -582,8 +586,7 @@ const cardsData = [
     description: [
       {
         title: '1. 零',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595674/zero/zero_azhgul.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/zero',
       },
     ],
     jacket: 'zero-jacket.png',
@@ -596,8 +599,7 @@ const cardsData = [
     description: [
       {
         title: '1. キャンディーポップ',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577770/CandyPop/candypop_qytn6l.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/candy-pop',
       },
     ],
     jacket: 'candy-pop-jacket.png',
@@ -610,8 +612,7 @@ const cardsData = [
     description: [
       {
         title: '1. EVER',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710577973/Ever/EVER_zbwcam.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/ever',
       },
     ],
     jacket: 'ever-jacket.png',
@@ -624,58 +625,47 @@ const cardsData = [
     description: [
       {
         title: '1. ME',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595547/Toy/ME_hbyhts.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/me',
       },
       {
         title: '2. 馴れ初め',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595552/Toy/naresome_k1gqcf.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/s6waalkqjt3d',
       },
       {
         title: '3. 灯',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595549/Toy/akari_bifzce.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/9tsec0hwyfbb',
       },
       {
         title: '4. 淑女（Toy mix.）',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595538/Toy/lady_Toy_mix._s8vcuc.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/g4lyrapw7sjb',
       },
       {
         title: '5. 野辺送り',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595562/Toy/nobeokuri_ajduw2.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/qdldam5crzqh',
       },
       {
         title: '6. 101（Interlude.）',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595578/Toy/101_Interlude._p5advl.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/101-interlude',
       },
       {
         title: '7. 402号室の住人',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595585/Toy/402gousitunozyunin_jgijq6.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/402a1',
       },
       {
         title: '8. オーガズム（Toy mix.）',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595540/Toy/orgasm_Toy_mix._nkd6ci.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/mbgsbr3dwc3x',
       },
       {
         title: '9. 見世物',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595556/Toy/misemono_jlzkju.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/raleqnnxg3ri',
       },
       {
         title: '10. Feeling（Toy mix.）',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595565/Toy/feeling_Toy_mix._bj1bce.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/feeling',
       },
       {
         title: '11. 泡沫',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710595570/Toy/utakata_itcaoy.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/pc2zelh5djyr',
       },
     ],
     jacket: 'toy-jacket.png',
@@ -688,33 +678,27 @@ const cardsData = [
     description: [
       {
         title: '1. XXVI（inst.）',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508074/SixNearlyEqual/XXVI_urivwd.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/xxvi',
       },
       {
         title: '2. sexual',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508087/SixNearlyEqual/sexual_sofmla.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/sexual',
       },
       {
         title: '3. mystique',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508086/SixNearlyEqual/mystique_cxnuwi.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/mystique',
       },
       {
         title: '4. respiration（inst.）',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508080/SixNearlyEqual/respiration_bp65jg.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/respiration',
       },
       {
         title: '5. if',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508092/SixNearlyEqual/if_bm06ww.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/if',
       },
       {
         title: '6. 00:00',
-        musicUrl:
-          'https://res.cloudinary.com/ds3iqjqqh/video/upload/v1710508084/SixNearlyEqual/0000_ajomfr.wav',
+        musicUrl: 'https://soundcloud.com/syo_music_channnel/zero',
       },
     ],
     jacket: 'six-nearly-equal-jacket.png',
